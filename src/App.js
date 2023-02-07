@@ -10,11 +10,11 @@ function App() {
     responseType: 'code',
     clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
   });
-  
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
   return (
     <div className="App">
-      <header className="App-header"><button onClick={()=>auth0.authorize()}>log in</button></header>
-      
+      <header className="App-header"><button onClick={()=>auth0.authorize()}>log in</button>{code && <p>Auth code:<br />{code}</p>}</header>
     </div>
 
   );
