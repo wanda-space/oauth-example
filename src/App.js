@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { WebAuth } from 'auth0-js'
 
-function App() {
+
+function App() {    
+  console.log(process.env)    
+  const auth0 = new WebAuth({
+    domain: 'id-dev.wanda.space',
+    redirectUri: process.env.REACT_APP_REDIRECT_URL,
+    responseType: 'code',
+    clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
+  });
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"><button onClick={()=>auth0.authorize()}>log in</button></header>
+      
     </div>
+
   );
-}
+} 
 
 export default App;
