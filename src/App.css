@@ -24,15 +24,15 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  width: 150px;
+  margin-bottom: 24px;
+  background-color: #61dafb;
+  border-radius: 24px;
+  border: 1px grey solid;
+  color: #282c34;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
 }
