@@ -12,11 +12,11 @@ function App() {
   const params = new URLSearchParams(window.location.search);
   const code = params.get('code');
   const loginOptions = {    
-    scope: "write:items read:items write:orders read:orders",
-    prompt: "consent",
-  redirectUri: process.env.REACT_APP_REDIRECT_URL ??'https://wanda-space.github.io/oauth-example',
-
-}
+    scope: "write:items read:items openid profile email read:orders write:orders",
+    audience: "https://api.partner.dev.wanda.space",
+    prompt: 'consent',
+    redirectUri: process.env.REACT_APP_REDIRECT_URL ??'https://wanda-space.github.io/oauth-example',
+  }
 const logoutOptions = {returnTo: process.env.REACT_APP_REDIRECT_URL ??'https://wanda-space.github.io/oauth-example'}
   return (
     <div className="App">
