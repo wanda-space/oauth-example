@@ -15,9 +15,9 @@ function App() {
     scope: "write:items read:items openid profile email read:orders write:orders",
     audience: "https://api.partner.dev.wanda.space",
     prompt: 'consent',
-    redirectUri: process.env.REACT_APP_REDIRECT_URL ??'https://wanda-space.github.io/oauth-example',
+    redirectUri: 'https://wanda-space.github.io/oauth-example',
   }
-const logoutOptions = {returnTo: process.env.REACT_APP_REDIRECT_URL ??'https://wanda-space.github.io/oauth-example'}
+const logoutOptions = {returnTo: 'https://wanda-space.github.io/oauth-example'}
   return (
     <div className="App">
       <header className="App-header">
