@@ -12,7 +12,7 @@ function App() {
   const params = new URLSearchParams(window.location.search);
   const code = params.get('code');
   const loginOptions = {    
-    scope: "write:items read:items openid profile email read:orders write:orders",
+    scope: "items:write items:read openid profile email orders:read orders:write",
     audience: "https://api.partner.dev.wanda.space",
     prompt: 'consent',
     redirectUri: 'https://wanda-space.github.io/oauth-example',
